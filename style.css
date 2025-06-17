@@ -43,27 +43,26 @@ input::placeholder{
 
     
 }
-button{
-    border: none;
-    width: 60px;
-height: 60px;
-margin: 10px;
-border-radius: 50%;
-background: transparent;
-color: aliceblue;
-font-size: 20px;
-box-shadow: 6px -7px 15px rgba(221, 213, 205, 0.4);
-border: 1px solid white;
-cursor: pointer;
- background:linear-gradient(60deg,rgb(25, 123, 60),rgb(25, 0, 200));
-
+button {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+  cursor: pointer;
+  background: linear-gradient(60deg, rgb(25, 123, 60), rgb(25, 0, 200));
+  color: aliceblue;
+  font-size: 20px;
+  box-shadow: 6px -7px 15px rgba(221, 213, 205, 0.4);
+  transition: all 0.3s ease-in-out;
 }
+
 button:hover {
-    transform: scale(1.1);
-    box-shadow: 8px -9px 20px rgba(255, 0, 200, 0.6);
-    color: white;
-    background: linear-gradient(30deg, rgb(230, 100, 200), rgb(55, 230, 150)); /* Reversed gradient */
-    opacity: 0.9;
+  transform: scale(1.1);
+  box-shadow: 8px -9px 20px rgba(255, 0, 200, 0.6);
+  color: white;
+  background: linear-gradient(30deg, rgb(230, 100, 200), rgb(55, 230, 150));
+  opacity: 0.9;
 }
 .equalBtn{
     
