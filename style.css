@@ -61,7 +61,7 @@ cursor: pointer;
 button:hover {
     transform: scale(1.1);
     box-shadow: 8px -9px 20px rgba(255, 0, 200, 0.6);
-    color: orange, green;
+    color:green;
     opacity: 0.9;
     }
 hovo
