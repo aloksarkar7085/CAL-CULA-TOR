@@ -58,6 +58,13 @@ cursor: pointer;
  background:linear-gradient(60deg,rgb(255, 230, 0),rgb(255, 0, 200));
 
 }
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 8px -9px 20px rgba(255, 0, 200, 0.6);
+    color: orange, green;
+    opacity: 0.9;
+    }
+hovo
 .equalBtn{
     
     background-color: #1a114e;
