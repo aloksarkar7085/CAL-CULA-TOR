@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 
@@ -22,7 +24,9 @@
 
    
 
+<audio id="sound-mv" src="mv.mp3"></audio>
 
+<audio id="sound-bc" src="bc.mp3"></audio>
 
    
 
@@ -36,19 +40,21 @@
 
         <p><b>CALCULATOR</b></p>
 
+    <input type="text" id="inputBox" placeholder="0" readonly>
+
     
 
-        <input type =" text"placeholder="0" id="inputBox">
+    
 
         <div>
 
-        <button class="operator" >AC</button>
+        <button class="calc-btn  operator" data-sound="mv" >AC</button>
 
-        <button class="operator">DEL</button>
+        <button class="calc-btn  operator" data-sound="mv">DEL</button>
 
-        <button class="operator">%</button>
+        <button class="calc-btn  operator" data-sound="mv">%</button>
 
-        <button class="operator">/</button>
+        <button class="calc-btn  operator" data-sound="mv">/</button>
 
         
 
@@ -56,25 +62,25 @@
 
         <div>
 
-        <button>7</button>
+        <button class="calc-btn" data-sound="bc" >7</button>
 
-        <button>8</button>
+        <button class="calc-btn" data-sound="bc">8</button>
 
-        <button>9</button>
+        <button class="calc-btn" data-sound="bc">9</button>
 
-        <button class="operator">*</button>
+        <button class="calc-btn  operator" data-sound="mv">*</button>
 
         </div>
 
         <div> 
 
-        <button>4</button>
+        <button class="calc-btn" data-sound="bc">4</button>
 
-        <button>5</button>
+        <button class="calc-btn" data-sound="bc">5</button>
 
-        <button>6</button>
+        <button class="calc-btn" data-sound="bc">6</button>
 
-        <button class="operator">-</button>
+        <button class="calc-btn  operator" data-sound="mv">-</button>
 
         
 
@@ -82,13 +88,13 @@
 
         <div> 
 
-        <button>1</button>
+        <button class="calc-btn" data-sound="bc">1</button>
 
-        <button>2</button>
+        <button class="calc-btn" data-sound="bc">2</button>
 
-        <button>3</button>
+        <button class="calc-btn" data-sound="bc">3</button>
 
-        <button class="operator">+</button>
+        <button class="calc-btn  operator" data-sound="mv">+</button>
 
 
 
@@ -96,13 +102,13 @@
 
         <div>
 
-        <button>00</button>
+        <button class="calc-btn" data-sound="bc">00</button>
 
-        <button>0</button>
+        <button class="calc-btn" data-sound="bc">0</button>
 
-        <button>.</button>
+        <button class="calc-btn" data-sound="bc">.</button>
 
-        <button class="equalBtn">=</button>
+        <button class="calc-btn equalBtn" data-sound="mv">=</button>
 
     
 
