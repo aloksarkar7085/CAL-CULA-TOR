@@ -106,3 +106,16 @@ p {
   color:#E5E5EA;/* Blue color for time */
   text-shadow: 2.2px 2px 1px rgba(0, 0, 0, 0.5);
 }
+#visitor-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background:linear-gradient(30deg, #8facfe, blue);;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
