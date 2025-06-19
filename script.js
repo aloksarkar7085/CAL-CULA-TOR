@@ -69,9 +69,9 @@ fetch(url)
     }
   })
   .catch(err => {
-    console.error("Visitor counter error:", err);
-    document.getElementById("visitCount").innerText = "Error";
-  });
+  console.error("Visitor counter error:", err);
+  document.getElementById("visitCount").innerText = "Error";
+});
 
 // Unused code cleanup (optional)
 // If you don’t have an element with ID 'display', you can remove this
