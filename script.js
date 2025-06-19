@@ -56,18 +56,22 @@ arr.forEach(button => {
 
 const hasVisited = localStorage.getItem("hasVisitedCalculator");
 
-  const url = hasVisited
-    ? "https://api.countapi.xyz/get/alok-website/calculator"
-    : "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
+const url = hasVisited
+  ? "https://api.countapi.xyz/get/alok-website/calculator"
+  : "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
 
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("visitCount").innerText = data.value;
-      if (!hasVisited) {
-        localStorage.setItem("hasVisitedCalculator", true);
-      }
-    });
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitCount").innerText = data.value;
+    if (!hasVisited) {
+      localStorage.setItem("hasVisitedCalculator", true);
+    }
+  })
+  .catch(err => {
+    console.error("Visitor counter error:", err);
+    document.getElementById("visitCount").innerText = "Error";
+  });
 
 // Unused code cleanup (optional)
 // If you don’t have an element with ID 'display', you can remove this
