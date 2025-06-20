@@ -1,6 +1,163 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+/* Global Reset & Font */
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* Background Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main Body */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas Background (if used) */
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Calculator Container */
+.calculator {
+  border: 1px solid #fff;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #1e3c72, #2a5298);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  position: relative;
+}
+
+/* Display Input */
+input {
+  width: 320px;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0f7fa;
+  font-size: 36px;
+  text-align: right;
+  color: #222;
+  box-shadow: inset 0px 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Bebas Neue', cursive;
+}
+
+input::placeholder {
+  color: #333;
+}
+
+/* Calculator Buttons */
+button {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(145deg, #f2709c, #ff9472);
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 8px 8px 18px rgba(0, 255, 200, 0.6);
+  color: #fff;
+  background: linear-gradient(145deg, #ff416c, #ff4b2b);
+  opacity: 0.95;
+}
+
+/* Equal Button */
+.equalBtn {
+  background: linear-gradient(145deg, #11998e, #38ef7d);
+  color: white;
+}
+
+/* Operator Buttons */
+.operator {
+  background: linear-gradient(145deg, #fceabb, #f8b500);
+  color: #222;
+}
+
+/* Header Text */
+p {
+  text-align: center;
+  font-size: 18px;
+  color: #d1ecf1;
+  margin-top: 15px;
+}
+
+/* Date-Time Display */
+#date-time {
+  height: 30px;
+  width: 190px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 6.6px 3px 1px;
+  background: linear-gradient(30deg, #4facfe, #00f2fe);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+}
+
+.date {
+  color: lightcoral;
+  margin-right: 15px;
+  text-shadow: 2.3px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.time {
+  color: #E5E5EA;
+  text-shadow: 2.2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Visitor Counter */
+#visitor-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(30deg, #8facfe, blue);
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+  color: white;
+}
+/*@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
