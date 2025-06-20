@@ -1,4 +1,4 @@
-to// Show date & time in real time
+// Show date & time in real time
 const dateTimeElement = document.getElementById('date-time');
 const input = document.getElementById('inputBox');
 
