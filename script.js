@@ -57,34 +57,43 @@ arr.forEach(button => {
 
   
   async function getVisitCount() {
+  const visitCountElement = document.getElementById("visitCount");
+  if (!visitCountElement) {
+    console.warn("Element with ID 'visitCount' not found in the DOM. Cannot display visitor count.");
+    return;
+  }
+
   try {
-    const hasVisited = localStorage.getItem("hasVisitedCalculator");
-    
-    const url = hasVisited
-      ? "https://api.countapi.xyz/get/alok-website/calculator"
-      : "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
+    const hasVisited = localStorage.getItem("hasVisitedCalculator") === 'true';
+    let url;
+    if (hasVisited) {
+      url = "https:                                                
+    } else {
+      url = "//api.countapi.xyz/get/alok-website/calculator";
+    } else {
+      url = "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
+    }
 
-    const response = await fetch(url, {
-      mode: 'cors'
-    });
-
+    const response = await fetch(url, { mode: 'cors' });
     if (!response.ok) {
+      console.error(`HTTP error! status: ${response.status} from ${url}`);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
-
-    document.getElementById("visitCount").innerText = data.value;
+    visitCountElement.innerText = data.value;
 
     if (!hasVisited) {
-      localStorage.setItem("hasVisitedCalculator", true);
+      localStorage.setItem("hasVisitedCalculator", 'true');
     }
   } catch (err) {
-    console.error("Visitor counter error:", err.message, err.stack);
+    console.error("Visitor counter error:", err.message);
     if (err.message.includes('Failed to fetch')) {
-      document.getElementById("visitCount").innerText = "Network error";
+      visitCountElement.innerText = "Network error: Please check your internet connection.";
+    } else if (err.message.includes('HTTP error!')) {
+      visitCountElement.innerText = `Error: Could not load data (${err.message.split('status: ')[1] || 'HTTP error'}).`;
     } else {
-      document.getElementById("visitCount").innerText = "Error";
+      visitCountElement.innerText = "Error fetching count: Please try again later.";
     }
   }
 }
