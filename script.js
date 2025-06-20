@@ -55,24 +55,38 @@ arr.forEach(button => {
 });
 
 
-  const hasVisited = localStorage.getItem("hasVisitedCalculator");
-  const url = hasVisited
-    ? "https://api.countapi.xyz/get/alok-website/calculator"
-    : "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
+  
+  async function getVisitCount() {
+  try {
+    const hasVisited = localStorage.getItem("hasVisitedCalculator");
+    
+    const url = hasVisited
+      ? "https://api.countapi.xyz/get/alok-website/calculator"
+      : "https://api.countapi.xyz/update/alok-website/calculator/?amount=1";
 
-  console.log("Using URL:", url);
-
-  fetch(url)
-    .then(res => {
-      console.log("Fetch status:", res.status);
-      return res.json();
-    })
-    .then(data => {
-      console.log("Fetch result:", data);
-      document.getElementById("visitCount").innerText = data.value;
-      if (!hasVisited) localStorage.setItem("hasVisitedCalculator", true);
-    })
-    .catch(err => {
-      console.error("Visitor counter error:", err);
-      document.getElementById("visitCount").innerText = "Error";
+    const response = await fetch(url, {
+      mode: 'cors'
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    document.getElementById("visitCount").innerText = data.value;
+
+    if (!hasVisited) {
+      localStorage.setItem("hasVisitedCalculator", true);
+    }
+  } catch (err) {
+    console.error("Visitor counter error:", err.message, err.stack);
+    if (err.message.includes('Failed to fetch')) {
+      document.getElementById("visitCount").innerText = "Network error";
+    } else {
+      document.getElementById("visitCount").innerText = "Error";
+    }
+  }
+}
+
+getVisitCount();
